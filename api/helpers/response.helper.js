@@ -1,11 +1,7 @@
-const errorResponse = (code, message, error) => {
+exports.errorResponse = (code, message, error) => {
     return {
         code,
         message,
         error
     }
-}
-
-module.exports = {
-    errorResponse
 }

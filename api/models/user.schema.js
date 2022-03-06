@@ -1,4 +1,5 @@
-import mongoose, { Schema } from 'mongoose';
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
 const UserSchema = new Schema({
     firstName: String,
@@ -13,7 +14,26 @@ const UserSchema = new Schema({
         street: String,
         houseNo: Number,
         postalCode: String
+    },
+    active: Boolean,
+    roles: [{
+        type: Schema.Types.ObjectId,
+        ref: 'Role'
+    }],
+    info: {
+        createdAt: {
+            type: Date,
+            default: new Date
+        },
+        updatedAt: {
+            type: Date,
+            default: new Date
+        },
+        deletedAt: {
+            type: Date,
+            default: null
+        }
     }
 });
 
-export default mongoose.model('User', UserSchema);
+module.exports = mongoose.model('User', UserSchema);
