@@ -3,6 +3,7 @@ const RUNTIME = require('../constants/runtime.constants');
 const User = require('../models/user.schema');
 const Role = require('../models/role.schema');
 const _ROLES = require('../constants/roles.constants');
+const bcrypt = require('bcryptjs');
 
 // Database: set connection
 mongoose.connect('mongodb://localhost:27017/CMS', (err) => {
@@ -75,7 +76,6 @@ const createAdminUserPromise = new Promise((resolve, reject) => {
         firstName: 'Admin',
         lastName: 'Adminiusz',
         email: 'admin@admin.pl',
-        login: 'admin',
         birthDate: null,
         address: {
             country: 'Adminowo',
@@ -86,7 +86,8 @@ const createAdminUserPromise = new Promise((resolve, reject) => {
             postalCode: '66-666'
         },
         active: true,
-        roles: []
+        roles: [],
+        password: 'default'
     };
 
     _ROLES.forEach(group => {
@@ -95,12 +96,17 @@ const createAdminUserPromise = new Promise((resolve, reject) => {
         })
     });
 
-    User.create(user, (err) => {
-        if (err) {
-            console.log('DB_SEED(Create user problem): ', err);
-            reject(false);
-        }
-        console.log('DB_SEED(Create user success)');
+    bcrypt.genSalt(10, (err, salt) => {
+        bcrypt.hash('admin', salt, (err, hash) => {
+            user.password = hash;
+            User.create(user, (err) => {
+                if (err) {
+                    console.log('DB_SEED(Create user problem): ', err);
+                    reject(false);
+                }
+                console.log('DB_SEED(Create user success)');
+            });
+            resolve(true);
+        });
     });
-    resolve(true);
 })

@@ -29,7 +29,7 @@ app.use('/api', apiRouter);
 
 // Not found routes
 app.get('*', (req, res) => {
-    res.status(404).json(responseHelper.errorResponse(
+    res.status(errorConstants.NOT_FOUND.code).json(responseHelper.errorResponse(
         errorConstants.NOT_FOUND.code,
         errorConstants.NOT_FOUND.message,
         errorConstants.NOT_FOUND.name
