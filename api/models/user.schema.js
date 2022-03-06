@@ -16,10 +16,7 @@ const UserSchema = new Schema({
         postalCode: String
     },
     active: Boolean,
-    roles: [{
-        type: Schema.Types.ObjectId,
-        ref: 'Role'
-    }],
+    roles: [String],
     info: {
         createdAt: {
             type: Date,
