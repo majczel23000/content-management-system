@@ -7,11 +7,13 @@ export class Database {
     }
 
     initConnection(): void {
-        mongoose.connect('mongodb://localhost:27017/CMS', (err) => {
-            if (err) {
+        mongoose.connect('mongodb://localhost:27017/CMS').then(
+            () => {
+                console.log('Database connection success.');
+            },
+            err => {
                 console.log('DB not ok: ', err);
             }
-            console.log('DB ok');
-        });
+        )
     }
 }

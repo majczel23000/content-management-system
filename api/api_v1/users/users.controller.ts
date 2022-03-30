@@ -1,5 +1,6 @@
 import express from 'express';
-import { BaseController } from '../shared/class/base.controller';
+import { BaseController } from '../shared/base/base.controller';
+import usersDB from '../shared/schemas/user.schema';
 
 export class UsersController extends BaseController {
 

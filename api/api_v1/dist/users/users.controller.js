@@ -1,11 +1,25 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-class UsersController {
+exports.UsersController = void 0;
+const base_controller_1 = require("../shared/class/base.controller");
+class UsersController extends base_controller_1.BaseController {
     constructor() {
+        super();
     }
-    createUser(req, res) {
-        res.status(200).json({ 'ok': 'ok' });
+    create(req, res) {
+    }
+    getAll(req, res) {
+    }
+    getById(req, res) {
+    }
+    removeById(req, res) {
+    }
+    modifyById(req, res) {
+    }
+    activateById(req, res) {
+    }
+    deactivateById(req, res) {
     }
 }
-exports.default = new UsersController();
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoidXNlcnMuY29udHJvbGxlci5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uL3VzZXJzL3VzZXJzLmNvbnRyb2xsZXIudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7QUFFQSxNQUFNLGVBQWU7SUFFakI7SUFDQSxDQUFDO0lBRU0sVUFBVSxDQUFDLEdBQW9CLEVBQUUsR0FBcUI7UUFDekQsR0FBRyxDQUFDLE1BQU0sQ0FBQyxHQUFHLENBQUMsQ0FBQyxJQUFJLENBQUMsRUFBQyxJQUFJLEVBQUMsSUFBSSxFQUFDLENBQUMsQ0FBQztJQUN0QyxDQUFDO0NBQ0o7QUFFRCxrQkFBZSxJQUFJLGVBQWUsRUFBRSxDQUFBIn0=
+exports.UsersController = UsersController;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoidXNlcnMuY29udHJvbGxlci5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uL3VzZXJzL3VzZXJzLmNvbnRyb2xsZXIudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7O0FBQ0EscUVBQWlFO0FBRWpFLE1BQWEsZUFBZ0IsU0FBUSxnQ0FBYztJQUUvQztRQUNJLEtBQUssRUFBRSxDQUFDO0lBQ1osQ0FBQztJQUVELE1BQU0sQ0FBQyxHQUFvQixFQUFFLEdBQXFCO0lBRWxELENBQUM7SUFFRCxNQUFNLENBQUMsR0FBb0IsRUFBRSxHQUFxQjtJQUVsRCxDQUFDO0lBRUQsT0FBTyxDQUFDLEdBQW9CLEVBQUUsR0FBcUI7SUFFbkQsQ0FBQztJQUVELFVBQVUsQ0FBQyxHQUFvQixFQUFFLEdBQXFCO0lBRXRELENBQUM7SUFFRCxVQUFVLENBQUMsR0FBb0IsRUFBRSxHQUFxQjtJQUV0RCxDQUFDO0lBRUQsWUFBWSxDQUFDLEdBQW9CLEVBQUUsR0FBcUI7SUFFeEQsQ0FBQztJQUVELGNBQWMsQ0FBQyxHQUFvQixFQUFFLEdBQXFCO0lBRTFELENBQUM7Q0FDSjtBQWpDRCwwQ0FpQ0MifQ==

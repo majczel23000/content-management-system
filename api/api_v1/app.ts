@@ -1,7 +1,7 @@
 import express from 'express';
 import * as bodyParser from 'body-parser';
 import cors from 'cors'
-import { BaseRouter } from './shared/class/base.router';
+import { BaseRouter } from './shared/base/base.router';
 import { UsersRouter } from './users/users.router';
 import { AuthRouter } from './auth/auth.router';
 import { Database } from './database/db';
